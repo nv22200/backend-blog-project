@@ -1,1 +1,1 @@
-export const my_name = "mohammed"
+export const my_name = "mohammed";
