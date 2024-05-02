@@ -11,7 +11,7 @@ const PostSchema = new Schema(
     tags: { type: [String] },
     categories: [{typ: Schema.Types.ObjectId, ref: "PostCategories"}]
   },
-  { timestamps: true }
+  {timestamps: true}
 );
 
 PostSchema.virtual("comments", {
