@@ -2,10 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import connectDB from "./config/db";
-import { errorResponserHandler, invalidPathHandler } from "./middleware/errorHandler";
+import { 
+  errorResponserHandler, 
+  invalidPathHandler, 
+} from "./middleware/errorHandler";
 
 // Routes
 import userRoutes from "./routes/userRoutes";
+import PostRoutes from "./routes/PostRoutes";
 
 dotenv.config();
 connectDB();
@@ -17,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/Posts", PostRoutes);
 
 app.use(invalidPathHandler);
 app.use(errorResponserHandler);
